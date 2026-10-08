@@ -20,6 +20,8 @@ async def main(request: Request):
             "messages": [{"role": "user", "content": user_text}],
         }
     )
+    print("STATUS:", response.status_code)
+    print("BODY:", response.text)
     answer = response.json()["choices"][0]["message"]["content"]
 
     return {
