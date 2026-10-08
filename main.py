@@ -33,6 +33,7 @@ async def main(request: Request):
             "model": "deepseek-v4.1-flash",
             "messages": [{"role": "user", "content": user_text}],
             "reasoning": {"enabled": False},
+            "max_tokens": 300,
         }
     )
 
