@@ -32,6 +32,7 @@ async def main(request: Request):
         json={
             "model": "deepseek-v4.1-flash",
             "messages": [{"role": "user", "content": user_text}],
+            "reasoning": {"enabled": False},
         }
     )
 
