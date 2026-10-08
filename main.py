@@ -31,7 +31,13 @@ async def main(request: Request):
         headers={"Authorization": f"Bearer {DEEPSEEK_API_KEY}"},
         json={
             "model": "deepseek-v4.1-flash",
-            "messages": [{"role": "user", "content": user_text}],
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Отвечай кратко и по делу. Максимум 2-3 предложения. Не используй списки и форматирование. Только суть."
+                },
+                {"role": "user", "content": user_text}
+            ],
             "reasoning": {"enabled": False},
             "max_tokens": 300,
         }
